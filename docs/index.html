@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Archive Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+        function searchFiles() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.getElementsByTagName('tr');
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                let showRow = false;
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j] && cells[j].innerText.toLowerCase().includes(input)) {
+                        showRow = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = showRow ? '' : 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>PDF Archive</h1>
+<input type="text" id="searchInput" onkeyup="searchFiles()" placeholder="Search for PDF files...">
+
+<table>
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Download Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Sample row -->
+        <tr>
+            <td>Sample PDF 1</td>
+            <td><a href="pdfs/sample1.pdf" download>Download</a></td>
+        </tr>
+        <tr>
+            <td>Sample PDF 2</td>
+            <td><a href="pdfs/sample2.pdf" download>Download</a></td>
+        </tr>
+        <!-- More rows can be dynamically added here -->
+    </tbody>
+</table>
+
+</body>
+</html>
