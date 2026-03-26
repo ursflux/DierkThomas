@@ -6,196 +6,102 @@
     <title>Dierk Thomas - Case History Archive</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { background: #2c3e50; color: white; padding: 30px 0; text-align: center; margin-bottom: 40px; }
-        h1 { font-size: 2.5em; margin-bottom: 10px; }
-        .subtitle { font-size: 1.1em; opacity: 0.9; }
-        input[type="text"] { width: 100%; padding: 12px; margin-bottom: 20px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px; }
-        table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: #2c3e50; color: white; }
-        tr:hover { background-color: #f5f5f5; }
-        a { color: #3498db; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        footer { text-align: center; margin-top: 40px; padding: 20px; color: #999; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        header { background: #2c3e50; color: white; padding: 30px; text-align: center; border-radius: 8px; margin-bottom: 30px; }
+        h1 { margin-bottom: 10px; }
+        input { width: 100%; padding: 10px; margin-bottom: 20px; font-size: 16px; border: 1px solid #ddd; }
+        .document-list { background: white; padding: 20px; border-radius: 8px; }
+        .document { padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .document:hover { background: #f9f9f9; }
+        .doc-info h3 { margin-bottom: 5px; color: #2c3e50; }
+        .doc-date { font-size: 0.9em; color: #666; }
+        .doc-actions { display: flex; gap: 10px; }
+        button { padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .view-btn { background: #27ae60; color: white; }
+        .view-btn:hover { background: #229954; }
+        .download-btn { background: #3498db; color: white; }
+        .download-btn:hover { background: #2980b9; }
+        .hidden { display: none; }
     </style>
-    <script>
-        function filterTable() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const rows = document.querySelectorAll('table tbody tr');
-            rows.forEach(row => {
-                const text = row.textContent.toLowerCase();
-                row.style.display = text.includes(input) ? '' : 'none';
-            });
-        }
-    </script>
 </head>
 <body>
-    <header>
-        <h1>📋 Dierk Thomas - Case History Archive</h1>
-        <p class="subtitle">Complete Document Collection (2007-2017)</p>
-    </header>
-
     <div class="container">
-        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search documents by name, date, or type...">
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Document Name</th>
-                    <th>Date</th>
-                    <th>Access</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Exhibit 2 - Mr Justice Warren</td>
-                    <td>2007-12-05</td>
-                    <td><a href="../pdfs/20071205%20Dierk%20Thomas%20Exhibit%202%20-%20Mr%20Justice%20Warren.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>German Criminal Judgment (1)</td>
-                    <td>2013-10-18</td>
-                    <td><a href="../pdfs/20131018%20German%20Criminal%20Judgment%20Dierk%20Thomas%20(1).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>German Criminal Judgment (2)</td>
-                    <td>2013-10-18</td>
-                    <td><a href="../pdfs/20131018%20German%20Criminal%20Judgment%20Dierk%20Thomas%202.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Urteil Steuerhinterziehung (1)</td>
-                    <td>2013-10-28</td>
-                    <td><a href="../pdfs/20131028%20Dierk%20Thomas%20Urteil%20im%20Steuerhinterziehungsverfahren%20(1).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Kriminalpolizei Wien Report (1)</td>
-                    <td>2014-09-08</td>
-                    <td><a href="../pdfs/20140908%20Kriminalpolizei%20Wien%20Dierk%20Thomas%20Gfoeller%20Pachtvertrag%20Untersuchungsbericht%20(1).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Kriminalpolizei Wien Report (2)</td>
-                    <td>2014-09-08</td>
-                    <td><a href="../pdfs/20140908%20Kriminalpolizei%20Wien%20Dierk%20Thomas%20Gfoeller%20Pachtvertrag%20Untersuchungsbericht%202.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Kriminalpolizei Wien Report (3)</td>
-                    <td>2014-09-08</td>
-                    <td><a href="../pdfs/20140908%20Kriminalpolizei%20Wien%20Dierk%20Thomas%20Gfoeller%20Pachtvertrag%20Untersuchungsbericht.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Landesgericht Innsbruck Judgment</td>
-                    <td>2015-07-31</td>
-                    <td><a href="../pdfs/20150731%20Urteil%20Landesgericht%20Innsbruck%20Richter%20Boehner%20Dierk%20Thomas%20_cid___JustizArchivRef-40001_%20(1).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Austrian Criminal Judgment (English 1)</td>
-                    <td>2016-08-04</td>
-                    <td><a href="../pdfs/20160804%20Austrian%20Criminal%20Judgment%20Dierk%20Thomas%20English%20Translation%20Fir...%20(1).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Austrian Criminal Judgment (English 2)</td>
-                    <td>2016-08-04</td>
-                    <td><a href="../pdfs/20160804%20Austrian%20Criminal%20Judgment%20Dierk%20Thomas%20English%20Translation%20Fir...%202.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Austrian Criminal Judgment (German)</td>
-                    <td>2016-08-04</td>
-                    <td><a href="../pdfs/20160804%20Austrian%20Criminal%20Judgment%20Dierk%20Thomas%20German_%20(1).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Michaela Thomas Witness Statement</td>
-                    <td>2016-12-14</td>
-                    <td><a href="../pdfs/20161214%201st%20Witness%20Statement%20of%20Michaela%20Thomas%20415%20of%202015%2014DEC2016.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Kathryn Jackson Witness Statement</td>
-                    <td>2016-12-14</td>
-                    <td><a href="../pdfs/20161214%20Kathryn%20Jackson%20Witness%20Statement%20415%20of%202015%20Dierk%20Thomas.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>M W Peachman Witness Statement</td>
-                    <td>2016-12-14</td>
-                    <td><a href="../pdfs/20161214%20MWPeachman%20Witness%20Statement%20-%204763%20of%202005.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Mr Justice Snowden Freezing Injunction (2)</td>
-                    <td>2016-12-20</td>
-                    <td><a href="../pdfs/20161220%20Mr%20Justice%20Snowden%20Freezing%20Injunction%20Dierk%20Thomas%204763%20of%202005%20vantage_point_21_dec_16%20(2).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Mr Justice Snowden Freezing Injunction (3)</td>
-                    <td>2016-12-20</td>
-                    <td><a href="../pdfs/20161220%20Mr%20Justice%20Snowden%20Freezing%20Injunction%20Dierk%20Thomas%204763%20of%202005%20vantage_point_21_dec_16%20(3).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Mr Justice Snowden Freezing Injunction (Main)</td>
-                    <td>2016-12-20</td>
-                    <td><a href="../pdfs/20161220%20Mr%20Justice%20Snowden%20Freezing%20Injunction%20Dierk%20Thomas%204763%20of%202005%20vantage_point_21_dec_16%202.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Affidavit - Order for Information (1)</td>
-                    <td>2017-01-24</td>
-                    <td><a href="../pdfs/201701224%20Affidavit%20Dierk%20Thomas%20-%20Order%20for%20Information%20Snowden%20-%20Sworn%20again%20at%20Beachcroft%2024JAN2017%20(1).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Amended Statement - Thomas Haederle</td>
-                    <td>2017-06-07</td>
-                    <td><a href="../pdfs/20170607%20Amended%20SA%20Thomas%20Haederle.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Case Summary (2)</td>
-                    <td>2017-06-07</td>
-                    <td><a href="../pdfs/20170607%20Case%20Summary2%20(2).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Case Summary (2nd version)</td>
-                    <td>2017-06-07</td>
-                    <td><a href="../pdfs/20170607%20Case%20Summary2%202.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Case Summary (3rd version)</td>
-                    <td>2017-06-07</td>
-                    <td><a href="../pdfs/20170607%20Case%20Summary2%203.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Bankruptcy Judgment - Dismissed</td>
-                    <td>2017-10-20</td>
-                    <td><a href="../pdfs/20171020%20Registrar%20Derrett%20Judgment%20Bankruptcy%20Dierk%20Thomas%20dismissed.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Scan Document</td>
-                    <td>2015-06-26</td>
-                    <td><a href="../pdfs/Scan_20150626_083048.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Schreiben Haederle</td>
-                    <td>Unknown</td>
-                    <td><a href="../pdfs/Schreiben%20HA%CC%83%C2%A4derle%201.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Terminsbericht Verhandlung (1)</td>
-                    <td>Unknown</td>
-                    <td><a href="../pdfs/Terminsbericht%20Verhandlung%20gg.%20Michaela%20Thomas%20(1).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Terminsbericht Verhandlung (2)</td>
-                    <td>Unknown</td>
-                    <td><a href="../pdfs/Terminsbericht%20Verhandlung%20gg.%20Michaela%20Thomas%202.pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Stellungnahme (Position Statement)</td>
-                    <td>Unknown</td>
-                    <td><a href="../pdfs/stellungnahme%20(1).pdf" target="_blank">📄 View PDF</a></td>
-                </tr>
-            </tbody>
-        </table>
+        <header>
+            <h1>📋 Dierk Thomas - Case History Archive</h1>
+            <p>Complete Document Collection (2007-2017)</p>
+        </header>
 
-        <footer>
-            <p><strong>Total Documents:</strong> 33 files | <strong>Date Range:</strong> 2007-2017</p>
-            <p>&copy; 2026 Dierk Thomas Case Archives. All rights reserved.</p>
-        </footer>
+        <input type="text" id="search" placeholder="Search documents..." onkeyup="filterDocs()">
+
+        <div class="document-list" id="docList"></div>
     </div>
+
+    <script>
+        // Array of PDF files with exact filenames from your repository
+        const docs = [
+            { name: "Exhibit 2 - Mr Justice Warren", date: "2007-12-05", file: "20071205 Dierk Thomas Exhibit 2 - Mr Justice Warren.pdf" },
+            { name: "German Criminal Judgment (1)", date: "2013-10-18", file: "20131018 German Criminal Judgment Dierk Thomas (1).pdf" },
+            { name: "German Criminal Judgment (2)", date: "2013-10-18", file: "20131018 German Criminal Judgment Dierk Thomas 2.pdf" },
+            { name: "Urteil Steuerhinterziehung", date: "2013-10-28", file: "20131028 Dierk Thomas Urteil im Steuerhinterziehungsverfahren (1).pdf" },
+            { name: "Kriminalpolizei Wien Report (1)", date: "2014-09-08", file: "20140908 Kriminalpolizei Wien Dierk Thomas Gfoeller Pachtvertrag Untersuchungsbericht (1).pdf" },
+            { name: "Kriminalpolizei Wien Report (2)", date: "2014-09-08", file: "20140908 Kriminalpolizei Wien Dierk Thomas Gfoeller Pachtvertrag Untersuchungsbericht 2.pdf" },
+            { name: "Kriminalpolizei Wien Report (3)", date: "2014-09-08", file: "20140908 Kriminalpolizei Wien Dierk Thomas Gfoeller Pachtvertrag Untersuchungsbericht.pdf" },
+            { name: "Landesgericht Innsbruck Judgment", date: "2015-07-31", file: "20150731 Urteil Landesgericht Innsbruck Richter Boehner Dierk Thomas _cid___JustizArchivRef-40001_ (1).pdf" },
+            { name: "Austrian Criminal Judgment (English 1)", date: "2016-08-04", file: "20160804 Austrian Criminal Judgment Dierk Thomas English Translation Fir... (1).pdf" },
+            { name: "Austrian Criminal Judgment (English 2)", date: "2016-08-04", file: "20160804 Austrian Criminal Judgment Dierk Thomas English Translation Fir... 2.pdf" },
+            { name: "Austrian Criminal Judgment (German)", date: "2016-08-04", file: "20160804 Austrian Criminal Judgment Dierk Thomas German_ (1).pdf" },
+            { name: "Michaela Thomas Witness Statement", date: "2016-12-14", file: "20161214 1st Witness Statement of Michaela Thomas 415 of 2015 14DEC2016.pdf" },
+            { name: "Kathryn Jackson Witness Statement", date: "2016-12-14", file: "20161214 Kathryn Jackson Witness Statement 415 of 2015 Dierk Thomas.pdf" },
+            { name: "M W Peachman Witness Statement", date: "2016-12-14", file: "20161214 MWPeachman Witness Statement - 4763 of 2005.pdf" },
+            { name: "Mr Justice Snowden Freezing Injunction (2)", date: "2016-12-20", file: "20161220 Mr Justice Snowden Freezing Injunction Dierk Thomas 4763 of 2005 vantage_point_21_dec_16 (2).pdf" },
+            { name: "Mr Justice Snowden Freezing Injunction (3)", date: "2016-12-20", file: "20161220 Mr Justice Snowden Freezing Injunction Dierk Thomas 4763 of 2005 vantage_point_21_dec_16 (3).pdf" },
+            { name: "Mr Justice Snowden Freezing Injunction (Main)", date: "2016-12-20", file: "20161220 Mr Justice Snowden Freezing Injunction Dierk Thomas 4763 of 2005 vantage_point_21_dec_16 2.pdf" },
+            { name: "Affidavit - Order for Information", date: "2017-01-24", file: "201701224 Affidavit Dierk Thomas - Order for Information Snowden - Sworn again at Beachcroft 24JAN2017 (1).pdf" },
+            { name: "Amended Statement - Thomas Haederle", date: "2017-06-07", file: "20170607 Amended SA Thomas Haederle.pdf" },
+            { name: "Case Summary (2)", date: "2017-06-07", file: "20170607 Case Summary2 (2).pdf" },
+            { name: "Case Summary (2nd version)", date: "2017-06-07", file: "20170607 Case Summary2 2.pdf" },
+            { name: "Case Summary (3rd version)", date: "2017-06-07", file: "20170607 Case Summary2 3.pdf" },
+            { name: "Bankruptcy Judgment - Dismissed", date: "2017-10-20", file: "20171020 Registrar Derrett Judgment Bankruptcy Dierk Thomas dismissed.pdf" },
+            { name: "Scan Document", date: "2015-06-26", file: "Scan_20150626_083048.pdf" },
+            { name: "Schreiben Haederle", date: "Unknown", file: "Schreiben HÃ¤derle 1.pdf" },
+            { name: "Terminsbericht Verhandlung (1)", date: "Unknown", file: "Terminsbericht Verhandlung gg. Michaela Thomas (1).pdf" },
+            { name: "Terminsbericht Verhandlung (2)", date: "Unknown", file: "Terminsbericht Verhandlung gg. Michaela Thomas 2.pdf" },
+            { name: "Stellungnahme (Position Statement)", date: "Unknown", file: "stellungnahme (1).pdf" }
+        ];
+
+        function renderDocs() {
+            const list = document.getElementById('docList');
+            list.innerHTML = '';
+            docs.forEach(doc => {
+                const encodedFile = encodeURIComponent(doc.file);
+                const pdfUrl = `https://cdn.jsdelivr.net/gh/ursflux/DierkThomas@main/pdfs/${encodedFile}`;
+                const div = document.createElement('div');
+                div.className = 'document';
+                div.innerHTML = `
+                    <div class="doc-info">
+                        <h3>${doc.name}</h3>
+                        <p class="doc-date">📅 ${doc.date}</p>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="${pdfUrl}" target="_blank" class="view-btn">📖 View</a>
+                        <a href="${pdfUrl}" download class="download-btn">⬇ Download</a>
+                    </div>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        function filterDocs() {
+            const search = document.getElementById('search').value.toLowerCase();
+            const documents = document.querySelectorAll('.document');
+            documents.forEach(doc => {
+                const text = doc.textContent.toLowerCase();
+                doc.style.display = text.includes(search) ? '' : 'none';
+            });
+        }
+
+        renderDocs();
+    </script>
 </body>
 </html>
